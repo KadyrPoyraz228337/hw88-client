@@ -10,7 +10,7 @@ export const logoutUserSuccess = () => ({type: LOGOUT_USER_SUCCESS});
 export const registerUser = user => async dispatch => {
   try {
     const resp = await axiosForum.post('/users', user);
-    dispatch(loginUserSuccess(resp.data))
+    dispatch(loginUserSuccess(resp.data));
     dispatch(push('/'))
   } catch (e) {
     dispatch(loginUserFailure(e))
@@ -20,7 +20,7 @@ export const registerUser = user => async dispatch => {
 export const loginUser = user => async dispatch => {
   try {
     const resp = await axiosForum.post('/users/sessions', user);
-    dispatch(loginUserSuccess(resp.data))
+    dispatch(loginUserSuccess(resp.data));
     dispatch(push('/'))
   } catch (e) {
     dispatch(loginUserFailure(e))
@@ -29,6 +29,6 @@ export const loginUser = user => async dispatch => {
 
 export const logoutUser = () => async dispatch => {
   await axiosForum.delete('users/sessions');
+  dispatch(logoutUserSuccess());
   dispatch(push('/'));
-  dispatch(logoutUserSuccess())
 };

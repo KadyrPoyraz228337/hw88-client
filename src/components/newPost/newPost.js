@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import {Alert, Button, Form} from "reactstrap";
 import FormField from "../UI/formField/formField";
 import {useDispatch, useSelector} from "react-redux";
-import {registerUser} from "../../store/actions/users";
 import {addPost} from "../../store/actions/posts";
 
 const NewPost = () => {

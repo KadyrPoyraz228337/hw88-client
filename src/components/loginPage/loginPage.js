@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import FormField from "../UI/formField/formField";
-import {Alert, Button, Form} from "reactstrap";
-import {useDispatch, useSelector} from "react-redux";
+import {Button, Form} from "reactstrap";
+import {useDispatch} from "react-redux";
 import {loginUser} from "../../store/actions/users";
 
 const LoginPage = () => {
@@ -10,7 +10,6 @@ const LoginPage = () => {
     password: '',
   };
   const [userInfo, setUser] = useState(initialState);
-  const error = useSelector(state => state.users.error);
   const dispatch = useDispatch();
 
   const inputChangeHandler = e => setUser({...userInfo, [e.target.name]: e.target.value});

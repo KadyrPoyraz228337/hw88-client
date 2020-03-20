@@ -21,6 +21,7 @@ const PostsPage = () => {
             image={post.image}
             name={post.user.username}
             date={post.datetime}
+            totalComments={post.totalComments}
           />
         ))}
       </ListGroup>

@@ -18,7 +18,7 @@ const Post = () => {
   const inputChangeHandler = e => setComment({...comment, [e.target.name]: e.target.value});
   const onSubmit = e => {
     e.preventDefault();
-    dispatch(addcomment(comment))
+    dispatch(addcomment(comment));
     dispatch(push('/'+params.id))
   };
 
@@ -34,9 +34,12 @@ const Post = () => {
           className='border w-25 mr-4'
           style={{borderRadius: '30px'}}
         />}
-        <div>
-          <h1>{post.title}</h1>
-          <p className='text-muted'>{post.description}</p>
+        <div className='d-flex w-100'>
+          <div>
+            <h1>{post.title}</h1>
+            <p className='text-muted'>{post.description}</p>
+          </div>
+          <p className='font-weight-bold text-muted ml-auto'>{post.datetime}</p>
         </div>
       </div>
       <div>
@@ -57,7 +60,7 @@ const Post = () => {
         {comments && <div>
           <ListGroup>
             {comments.map(comment => (
-              <ListGroupItem className='d-flex'>
+              <ListGroupItem className='d-flex w-75' key={comment._id}>
                 <b className='mr-3'>{comment.user.username}</b>
                 <p className='m-0'>{comment.text}</p>
                 <p className='text-muted ml-auto m-0'>{comment.datetime}</p>

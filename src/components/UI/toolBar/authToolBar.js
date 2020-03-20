@@ -7,6 +7,7 @@ import {logoutUser} from "../../../store/actions/users";
 const AuthToolBar = () => {
   const user = useSelector(state => state.users.user);
   const dispatch = useDispatch();
+
   return (
     <>
       <NavbarText className='mr-3'>Hello, <b>{user.user.username}</b>!</NavbarText>
@@ -14,9 +15,6 @@ const AuthToolBar = () => {
         <NavLink tag={RouterNavLink} to='/new' exact>Add new post</NavLink>
       </NavItem>
       <Button color='danger' onClick={() => dispatch(logoutUser())}>logout</Button>
-      {/*<NavItem>*/}
-      {/*  <Button tag={NavLink} onClick={dispatch(logoutUser())}>Logout</Button>*/}
-      {/*</NavItem>*/}
     </>
   );
 };

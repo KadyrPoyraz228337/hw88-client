@@ -1,4 +1,4 @@
-import {ADD_POST_FAILURE, FETCH_COMMENTS_SUCCESS, FETCH_POSTS_SUCCESS} from "../actions/actionTypes";
+import {ADD_POST_FAILURE, FETCH_POSTS_SUCCESS} from "../actions/actionTypes";
 
 const INITIAL_STATE = {
   posts: null,
